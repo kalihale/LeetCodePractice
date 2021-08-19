@@ -1,6 +1,9 @@
+package TopInterviewQuestions_Easy;
+
 /** ／(•ㅅ•)＼
  * @author Kali Hale
  * @since 2021-8-14
+ * https://leetcode.com/explore/interview/card/top-interview-questions-easy/127/strings/881/
  * Complete, correct
  */
 

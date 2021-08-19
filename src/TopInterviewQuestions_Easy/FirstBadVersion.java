@@ -1,8 +1,12 @@
+package TopInterviewQuestions_Easy;
+
 /**
  * ／(•ㅅ•)＼
  *
  * @author Kali Hale
  * @since 2021-08-17
+ * https://leetcode.com/explore/interview/card/top-interview-questions-easy/96/sorting-and-searching/774/
+ * Complete and correct
  */
 public class FirstBadVersion
 {

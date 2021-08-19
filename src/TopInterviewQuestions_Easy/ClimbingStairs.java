@@ -1,3 +1,5 @@
+package TopInterviewQuestions_Easy;
+
 import java.math.BigInteger;
 
 /**
@@ -5,6 +7,7 @@ import java.math.BigInteger;
  *
  * @author Kali Hale
  * @since 2021-08-18
+ * https://leetcode.com/explore/interview/card/top-interview-questions-easy/97/dynamic-programming/569/
  * Complete and correct!
  */
 public class ClimbingStairs

@@ -1,9 +1,11 @@
+package TopInterviewQuestions_Easy;
+
 import java.util.Arrays;
 
 /** ／(•ㅅ•)＼
  * @author Kali Hale
  * @since 2021-8-12
- *
+ * https://leetcode.com/explore/interview/card/top-interview-questions-easy/92/array/727/
  * Complete and correct
  */
 
