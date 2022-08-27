@@ -7,4 +7,4 @@ include_directories(CPP_Practice)
 
 add_executable(LeetCodePractice
         CPP_Practice/Solution.cpp
-        CPP_Practice/Solution.h)
+        CPP_Practice/Solution.h CPP_Practice/ListNode.h)
