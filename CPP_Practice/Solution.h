@@ -8,6 +8,7 @@
 #include <vector>
 #include <map>
 #include <string>
+#include <iostream>
 #include "ListNode.h"
 
 
@@ -111,11 +112,15 @@ public:
         curr = next;
         next = curr->next;
 
-        while(next->next != nullptr){
-            curr->next = prev;
-            prev = curr;
-            curr = next;
-            next = curr->next;
+        try{
+            while(true) {
+                curr->next = prev;
+                prev = curr;
+                curr = next;
+                next = curr->next;
+            }
+        }catch(int i){
+            std::cout << i << std::endl;
         }
 
         next->next = curr;
@@ -145,6 +150,65 @@ public:
         return ans;
     }
 
+    void reverseString(std::vector<char>& s) {
+        for(int i = 0; i < s.size()/2; ++i) {
+            char x = s[s.size() - 1 - i];
+            s[s.size() - 1 - i] = s[i];
+            s[i] = x;
+        }
+    }
+
+    bool isPalindrome(std::string s) {
+        std::string t;
+        for(char i : s) {
+            if((i <= 'z' && i >= 'a') || i <= 'Z' && i >= 'A' || i <= '9' && i >= '0') {
+                if(isalpha(i)) t += tolower(i);
+                else t += i;
+            }
+        }
+        for(int i = 0; i < t.size()/2; ++i) {
+            if(t[i] != t[t.size() - 1 - i]) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    bool isAnagram(std::string s, std::string t) {
+        std::map<char, int> smap;
+        std::map<char, int> tmap;
+        if(s.size() != t.size()) {
+            return false;
+        }
+        for(char c:s) {
+            try {
+                smap.at(c) = smap.at(c) + 1;
+            }catch(std::out_of_range e){
+                smap.insert(std::pair<char, int>(c, 1));
+            }
+        }
+        for(char c:t) {
+            try {
+                tmap.at(c) = tmap.at(c) + 1;
+            }catch(std::out_of_range e){
+                tmap.insert(std::pair<char, int>(c, 1));
+            }
+        }
+        return smap == tmap;
+    }
+
+    int strStr(std::string haystack, std::string needle) {
+        if(needle.empty() || haystack == needle) return 0;
+        if(needle.size() > haystack.size()) return -1;
+        for(int i = 0; i <= haystack.size() - needle.size(); ++i) {
+            int j = 0;
+            for(; j < needle.size(); j++) {
+                if(haystack[i + j] != needle[j]) break;
+            }
+            if(j == needle.size()) return i;
+        }
+        return -1;
+    }
 
 };
 
